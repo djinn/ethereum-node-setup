@@ -9,7 +9,7 @@ sudo mkfs.btrfs /dev/sdf
 sudo su -c 'echo "`blkid /dev/sdf|cut -f2 -d" "` /ethereum btrfs compress=zstd:15 0 1" >> /etc/fstab'
 sudo mount /ethereum 
 sudo chown -R ec2-user:ec2-user /ethereum
-curl https://gethstore.blob.core.windows.net/builds/geth-linux-arm64-1.10.23-d901d853.tar.gz|tar -zx && sudo cp geth*/geth /usr/local/bin
+curl https://gethstore.blob.core.windows.net/builds/geth-linux-arm64-1.10.25-69568c55.tar.gz|tar -zx && sudo cp geth*/geth /usr/local/bin
 sudo su -c  'cat > /etc/supervisord.d/geth.ini <<EOF 
 [program:geth]
 user=ec2-user
